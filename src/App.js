@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import MemeForm from "./MemeForm";
+import MemeList from "./MemeList";
 
 function App() {
+  const memes = useSelector((store) => store.memes);
+  const dispatch = useDispatch();
+
+  function add(newMeme) {
+    dispatch({ type: "ADD", meme: newMeme });
+  }
+
+  function remove(id) {
+    dispatch({ type: "REMOVE", id });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MemeForm addMeme={add} />
+      <MemeList memes={memes} removeMeme={remove} />
     </div>
   );
 }

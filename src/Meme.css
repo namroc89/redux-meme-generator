@@ -1,0 +1,47 @@
+.Meme {
+  position: relative;
+}
+
+.Meme img {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.Meme span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: black;
+  font-size: 3em;
+}
+
+.top-text {
+  top: 40px;
+}
+
+.bottom-text {
+  bottom: 60px;
+}
+
+#remove-btn {
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1em;
+  background-color: #757575;
+  color: white;
+  display: block;
+  margin: 0 auto;
+}
+
+#remove-btn:hover {
+  background-color: rgb(47, 46, 47);
+  cursor: pointer;
+}
